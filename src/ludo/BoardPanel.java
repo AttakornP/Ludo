@@ -1,8 +1,14 @@
+package ludo;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ludo;
+
 /**
  *
  * @author cartoonmed
@@ -25,31 +31,47 @@ public class BoardPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        LayerBG = new javax.swing.JLayeredPane();
+        LayerP1_1 = new javax.swing.JLayeredPane();
+        LabelP1_1 = new javax.swing.JLabel();
+        LabelBG = new javax.swing.JLabel();
+        
+        //==Add BG 
+        Icon BG = new ImageIcon("../Ludo/img/Ludo.jpg");
+        LabelBG = new JLabel(BG);
+        //==
+        
+        //==Add BG 
+        Icon P1_1 = new ImageIcon("../Ludo/img/Ludo.jpg");
+        LabelP1_1 = new JLabel(P1_1);
+        //==
 
         setBackground(new java.awt.Color(255, 51, 51));
-        setPreferredSize(new java.awt.Dimension(900, 650));
+        setPreferredSize(new java.awt.Dimension(650, 650));
 
-        jButton1.setText("jButton1");
+        LabelP1_1.setBounds(0, 0, 650, 650);
+        LayerP1_1.add(LabelP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        LayerP1_1.setBounds(0, 0, 650, 650);
+        LayerBG.add(LayerP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LabelBG.setBounds(0, 0, 650, 650);
+        LayerBG.add(LabelBG, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(354, 354, 354)
-                .addComponent(jButton1)
-                .addContainerGap(473, Short.MAX_VALUE))
+            .addComponent(LayerBG, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(jButton1)
-                .addContainerGap(482, Short.MAX_VALUE))
+            .addComponent(LayerBG, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
     }// </editor-fold>
     // Variables declaration - do not modify
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel LabelBG;
+    private javax.swing.JLabel LabelP1_1;
+    private javax.swing.JLayeredPane LayerBG;
+    private javax.swing.JLayeredPane LayerP1_1;
     // End of variables declaration
 }

@@ -4,6 +4,8 @@
  */
 package ludo;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author cartoonmed
@@ -14,7 +16,6 @@ public class MainWindows extends javax.swing.JFrame {
      * Creates new form MainWindows
      */
     public MainWindows() {
-
         initComponents();
         
         
@@ -30,18 +31,24 @@ public class MainWindows extends javax.swing.JFrame {
     private void initComponents() {
         BoardPanel panelB = new BoardPanel();
         ControlPanel panelC = new ControlPanel();
-        add(panelB);
-        add(panelC);
+        
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        //setPreferredSize(new java.awt.Dimension(850, 650));
+        setResizable(false);
         
         javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(panelB);
-        
+        //panelB.setLayout(Panel1Layout);
         Panel1Layout.setVerticalGroup(
             Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+        Panel1Layout.setVerticalGroup(
+            Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 122, Short.MAX_VALUE)
+        );
         
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(panelC);
-        panelC.setLayout(Panel2Layout);
+        //panelC.setLayout(Panel2Layout);
         Panel2Layout.setHorizontalGroup(
             Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
@@ -65,8 +72,9 @@ public class MainWindows extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(panelC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
