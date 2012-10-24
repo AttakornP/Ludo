@@ -18,12 +18,12 @@ public class BoardPanel extends javax.swing.JPanel {
     /**
      * Creates new form BoardPanel
      */
-    public int positionX[] = {  10,20,30,40,50,60,70,80
+    public int positionX[] = {  298,20,30,40,50,60,70,80
                                ,90,100,110,120,130,140,150,160
                                ,170,180,190,200,210,220,230,240
                                ,250,260,270,280,290,300,310,320
                                ,330,340,350,360,370,380,390,400};
-    public int positionY[] = {  10,20,30,40,50,60,70,80
+    public int positionY[] = {  595,20,30,40,50,60,70,80
                                ,90,100,110,120,130,140,150,160
                                ,170,180,190,200,210,220,230,240
                                ,250,260,270,280,290,300,310,320
@@ -62,7 +62,7 @@ public class BoardPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 51, 51));
         setPreferredSize(new java.awt.Dimension(650, 650));
 
-        LabelP1_1.setBounds(100, 100, 50, 50);
+        LabelP1_1.setBounds(108, 184, 36, 36);
         LayerP1_1.add(LabelP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         LayerP1_1.setBounds(0, 0, 650, 650);
