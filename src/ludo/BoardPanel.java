@@ -46,6 +46,12 @@ public class BoardPanel extends javax.swing.JPanel {
         LayerBG = new javax.swing.JLayeredPane();
         LayerP1_1 = new javax.swing.JLayeredPane();
         LabelP1_1 = new javax.swing.JLabel();
+        LayerP2_1 = new javax.swing.JLayeredPane();
+        LabelP2_1 = new javax.swing.JLabel();
+        LayerP3_1 = new javax.swing.JLayeredPane();
+        LabelP3_1 = new javax.swing.JLabel();
+        LayerP4_1 = new javax.swing.JLayeredPane();
+        LabelP4_1 = new javax.swing.JLabel();
         LabelBG = new javax.swing.JLabel();
         
         //==Add BG 
@@ -53,20 +59,55 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelBG = new JLabel(BG);
         //==
         
-        //==Add BG 
+        //==Add player Red 
         Icon P1_1 = new ImageIcon("../Ludo/img/Red.png");
         LabelP1_1 = new JLabel(P1_1);
+        //==
+        
+        //==Add player Green 
+        Icon P2_1 = new ImageIcon("../Ludo/img/Green.png");
+        LabelP2_1 = new JLabel(P2_1);
+        
+        //==Add player Yellow 
+        Icon P3_1 = new ImageIcon("../Ludo/img/Yellow.png");
+        LabelP3_1 = new JLabel(P3_1);
+        //==
+        
+        //==Add player Blue 
+        Icon P4_1 = new ImageIcon("../Ludo/img/Blue.png");
+        LabelP4_1 = new JLabel(P4_1);
 
         //==
 
         setBackground(new java.awt.Color(255, 51, 51));
         setPreferredSize(new java.awt.Dimension(650, 650));
-
+        
+        //== Layer P4_1
+        LabelP4_1.setBounds(433, 127, 36, 36);
+        LayerP4_1.add(LabelP4_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP4_1.setBounds(0, 0, 650, 650);
+        LayerP3_1.add(LayerP4_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        
+        //== Layer P3_1
+        LabelP3_1.setBounds(432, 495, 36, 36);
+        LayerP3_1.add(LabelP3_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP3_1.setBounds(0, 0, 650, 650);
+        LayerP2_1.add(LayerP3_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P2_1
+        LabelP2_1.setBounds(162, 475, 36, 36);
+        LayerP2_1.add(LabelP2_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP2_1.setBounds(0, 0, 650, 650);
+        LayerP1_1.add(LayerP2_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P1_1
         LabelP1_1.setBounds(108, 184, 36, 36);
-        LayerP1_1.add(LabelP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
+        LayerP1_1.add(LabelP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER); 
         LayerP1_1.setBounds(0, 0, 650, 650);
         LayerBG.add(LayerP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer BG
         LabelBG.setBounds(0, 0, 650, 650);
         LayerBG.add(LabelBG, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -84,7 +125,13 @@ public class BoardPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify
     private javax.swing.JLabel LabelBG;
     private javax.swing.JLabel LabelP1_1;
+    private javax.swing.JLabel LabelP2_1;
+    private javax.swing.JLabel LabelP3_1;
+    private javax.swing.JLabel LabelP4_1;
     private javax.swing.JLayeredPane LayerBG;
     private javax.swing.JLayeredPane LayerP1_1;
+    private javax.swing.JLayeredPane LayerP2_1;
+    private javax.swing.JLayeredPane LayerP3_1;
+    private javax.swing.JLayeredPane LayerP4_1;
     // End of variables declaration
 }

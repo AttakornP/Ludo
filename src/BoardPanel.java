@@ -27,12 +27,19 @@ public class BoardPanel extends javax.swing.JPanel {
 
         LayerBG = new javax.swing.JLayeredPane();
         LayerP1_1 = new javax.swing.JLayeredPane();
+        LayerP2_1 = new javax.swing.JLayeredPane();
+        LabelP2_1 = new javax.swing.JLabel();
         LabelP1_1 = new javax.swing.JLabel();
         LabelBG = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 51, 51));
         setPreferredSize(new java.awt.Dimension(650, 650));
 
+        LabelP2_1.setBounds(0, 0, 650, 650);
+        LayerP2_1.add(LabelP2_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        LayerP2_1.setBounds(0, 0, 650, 650);
+        LayerP1_1.add(LayerP2_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LabelP1_1.setBounds(0, 0, 650, 650);
         LayerP1_1.add(LabelP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -55,7 +62,9 @@ public class BoardPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelBG;
     private javax.swing.JLabel LabelP1_1;
+    private javax.swing.JLabel LabelP2_1;
     private javax.swing.JLayeredPane LayerBG;
     private javax.swing.JLayeredPane LayerP1_1;
+    private javax.swing.JLayeredPane LayerP2_1;
     // End of variables declaration//GEN-END:variables
 }
