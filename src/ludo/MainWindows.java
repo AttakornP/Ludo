@@ -16,7 +16,11 @@ public class MainWindows extends javax.swing.JFrame {
      * Creates new form MainWindows
      */
     public MainWindows() {
+        setUndecorated(true);
         initComponents();
+        setLocation(300, 50);
+        setTitle("Ludo Game");
+        
         
         
     }

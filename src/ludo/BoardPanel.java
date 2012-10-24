@@ -42,14 +42,15 @@ public class BoardPanel extends javax.swing.JPanel {
         //==
         
         //==Add BG 
-        Icon P1_1 = new ImageIcon("../Ludo/img/Ludo.jpg");
+        Icon P1_1 = new ImageIcon("../Ludo/img/Red.png");
         LabelP1_1 = new JLabel(P1_1);
+
         //==
 
         setBackground(new java.awt.Color(255, 51, 51));
         setPreferredSize(new java.awt.Dimension(650, 650));
 
-        LabelP1_1.setBounds(0, 0, 650, 650);
+        LabelP1_1.setBounds(100, 100, 50, 50);
         LayerP1_1.add(LabelP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         LayerP1_1.setBounds(0, 0, 650, 650);
