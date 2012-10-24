@@ -89,7 +89,7 @@ public class BoardPanel extends javax.swing.JPanel {
                 bt_roll_dieActionPerformed(evt);
             }
         });        
-        bt_roll_die.setBounds(570, 580, 80, 70);
+        bt_roll_die.setBounds(700, 550, 100, 100);
         LayerP4_1.add(bt_roll_die, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         //==Add BG 
@@ -123,26 +123,26 @@ public class BoardPanel extends javax.swing.JPanel {
         //== Layer P4_1
         //LabelP4_1.setBounds(433, 127, 36, 36);
         LayerP4_1.add(LabelP4_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        LayerP4_1.setBounds(0, 0, 650, 650);
+        LayerP4_1.setBounds(0, 0, 850, 650);
         LayerP3_1.add(LayerP4_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         
         //== Layer P3_1
         LabelP3_1.setBounds(432, 495, 36, 36);
         LayerP3_1.add(LabelP3_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        LayerP3_1.setBounds(0, 0, 650, 650);
+        LayerP3_1.setBounds(0, 0, 850, 650);
         LayerP2_1.add(LayerP3_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         //== Layer P2_1
         LabelP2_1.setBounds(162, 475, 36, 36);
         LayerP2_1.add(LabelP2_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        LayerP2_1.setBounds(0, 0, 650, 650);
+        LayerP2_1.setBounds(0, 0, 850, 650);
         LayerP1_1.add(LayerP2_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         //== Layer P1_1
         LabelP1_1.setBounds(108, 184, 36, 36);
         LayerP1_1.add(LabelP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER); 
-        LayerP1_1.setBounds(0, 0, 650, 650);
+        LayerP1_1.setBounds(0, 0, 850, 650);
         LayerBG.add(LayerP1_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         //== Layer BG
