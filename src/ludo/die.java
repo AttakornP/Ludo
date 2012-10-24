@@ -5,24 +5,11 @@ import java.util.Random;
 
 public class die {
    
-   int r ;  
-   
-    
-    public die(int r) {
-        this.r = r;
-    }
-
-   public void die(){
+   public int roll_die(){
     
    Random rn = new Random();
-   r = rn.nextInt(6)+1;
+   int r = rn.nextInt(6)+1;
    
-
-   }
-   int getdie(){
    return r;
-  }
-   
-     
-   
+   } 
 }
