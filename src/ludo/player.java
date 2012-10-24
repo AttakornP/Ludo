@@ -6,101 +6,70 @@ import java.awt.Image;
 
 public class player {
     
-    private int     x;
-    private int     y;
+    private int     poX_start;
+    private int     poY_start;
     private boolean status = false;
     private String  color;
-    private int     start[];
-    private int     end[];
+    private int     poX_current;
+    private int     poY_current;
 
-    private Image   red;
-    private Image   yellow;
-    private Image   green;
-    private Image   blue;
-
-    public Image getBlue() {
-        return blue;
-    }
-
-    public void setBlue(Image blue) {
-        this.blue = blue;
-    }
+    private Image   playerImg;
 
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public Image getPlayerImg() {
+        return playerImg;
     }
 
-    public int[] getEnd() {
-        return end;
+    public int getPoX_current() {
+        return poX_current;
     }
 
-    public void setEnd(int[] end) {
-        this.end = end;
+    public int getPoX_start() {
+        return poX_start;
     }
 
-    public Image getGreen() {
-        return green;
+    public int getPoY_current() {
+        return poY_current;
     }
 
-    public void setGreen(Image green) {
-        this.green = green;
-    }
-
-    public Image getRed() {
-        return red;
-    }
-
-    public void setRed(Image red) {
-        this.red = red;
-    }
-
-    public int[] getStart() {
-        return start;
-    }
-
-    public void setStart(int[] start) {
-        this.start = start;
+    public int getPoY_start() {
+        return poY_start;
     }
 
     public boolean isStatus() {
         return status;
     }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setPlayerImg(Image playerImg) {
+        this.playerImg = playerImg;
+    }
+
+    public void setPoX_current(int poX_current) {
+        this.poX_current = poX_current;
+    }
+
+    public void setPoX_start(int poX_start) {
+        this.poX_start = poX_start;
+    }
+
+    public void setPoY_current(int poY_current) {
+        this.poY_current = poY_current;
+    }
+
+    public void setPoY_start(int poY_start) {
+        this.poY_start = poY_start;
+    }
+
     public void setStatus(boolean status) {
         this.status = status;
     }
 
-    public int getX() {
-        return x;
-    }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public Image getYellow() {
-        return yellow;
-    }
-
-    public void setYellow(Image yellow) {
-        this.yellow = yellow;
-    }
-
-    
-    
-    
-    
-    
 }
