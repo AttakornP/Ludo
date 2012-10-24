@@ -98,21 +98,21 @@ public class BoardPanel extends javax.swing.JPanel {
         //==
         
         //==Add player Red 
-        Icon P1_1 = new ImageIcon("../Ludo/img/Red.png");
+        Icon P1_1 = new ImageIcon("../Ludo/img/Red1.png");
         LabelP1_1 = new JLabel(P1_1);
         //==
         
         //==Add player Green 
-        Icon P2_1 = new ImageIcon("../Ludo/img/Green.png");
+        Icon P2_1 = new ImageIcon("../Ludo/img/Green1.png");
         LabelP2_1 = new JLabel(P2_1);
         
         //==Add player Yellow 
-        Icon P3_1 = new ImageIcon("../Ludo/img/Yellow.png");
+        Icon P3_1 = new ImageIcon("../Ludo/img/Yellow1.png");
         LabelP3_1 = new JLabel(P3_1);
         //==
         
         //==Add player Blue 
-        Icon P4_1 = new ImageIcon("../Ludo/img/Blue.png");
+        Icon P4_1 = new ImageIcon("../Ludo/img/Blue1.png");
         LabelP4_1 = new JLabel(P4_1);
 
         //==
@@ -121,7 +121,7 @@ public class BoardPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(850, 650));
         
         //== Layer P4_1
-        //LabelP4_1.setBounds(433, 127, 36, 36);
+        LabelP4_1.setBounds(433, 127, 36, 36);
         LayerP4_1.add(LabelP4_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LayerP4_1.setBounds(0, 0, 850, 650);
         LayerP3_1.add(LayerP4_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
