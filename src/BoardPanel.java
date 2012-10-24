@@ -28,6 +28,7 @@ public class BoardPanel extends javax.swing.JPanel {
         LayerBG = new javax.swing.JLayeredPane();
         LayerP1_1 = new javax.swing.JLayeredPane();
         LayerP2_1 = new javax.swing.JLayeredPane();
+        bt_roll_die = new javax.swing.JButton();
         LabelP2_1 = new javax.swing.JLabel();
         LabelP1_1 = new javax.swing.JLabel();
         LabelBG = new javax.swing.JLabel();
@@ -35,6 +36,14 @@ public class BoardPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 51, 51));
         setPreferredSize(new java.awt.Dimension(650, 650));
 
+        bt_roll_die.setText("Die");
+        bt_roll_die.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_roll_dieActionPerformed(evt);
+            }
+        });
+        bt_roll_die.setBounds(570, 580, 80, 70);
+        LayerP2_1.add(bt_roll_die, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LabelP2_1.setBounds(0, 0, 650, 650);
         LayerP2_1.add(LabelP2_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -59,6 +68,11 @@ public class BoardPanel extends javax.swing.JPanel {
             .addComponent(LayerBG, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_roll_dieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_roll_dieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_roll_dieActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelBG;
     private javax.swing.JLabel LabelP1_1;
@@ -66,5 +80,6 @@ public class BoardPanel extends javax.swing.JPanel {
     private javax.swing.JLayeredPane LayerBG;
     private javax.swing.JLayeredPane LayerP1_1;
     private javax.swing.JLayeredPane LayerP2_1;
+    private javax.swing.JButton bt_roll_die;
     // End of variables declaration//GEN-END:variables
 }

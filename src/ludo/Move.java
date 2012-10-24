@@ -20,7 +20,12 @@ public class Move {
     
     public int nextPosition(int current_table, int point_die){
         int nexp_table = current_table + point_die;
-        return current_table;  
+        if(nexp_table < 40){
+            return nexp_table;  
+        }
+        else{
+            return current_table;
+        }
     }
     
 }

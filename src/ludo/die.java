@@ -3,7 +3,7 @@ package ludo;
 
 import java.util.Random;
 
-public class die {
+public class Die {
    
    public int roll_die(){
     
