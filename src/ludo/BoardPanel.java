@@ -82,8 +82,10 @@ public class BoardPanel extends javax.swing.JPanel {
         
         
         
-        
         bt_roll_die.setText("Die");
+        Icon die = new ImageIcon("../Ludo/img/dice.png");
+        
+        bt_roll_die.setIcon(die);
         bt_roll_die.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_roll_dieActionPerformed(evt);
@@ -167,8 +169,8 @@ public class BoardPanel extends javax.swing.JPanel {
         Die point = new Die();
         Move nextP = new Move();
         int point_die = point.roll_die();
-        Icon P4_1 = new ImageIcon("../Ludo/img/Blue.png");
-        bt_roll_die.setIcon(P4_1);
+        Icon dice = point.show_point(point_die);
+        bt_roll_die.setIcon(dice);
         int nextT = 0;
         int x = 0;
         int y = 0;        
