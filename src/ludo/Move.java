@@ -48,4 +48,24 @@ public class Move {
         
     }
     
+    
+    public Icon show_win(int round){
+        
+        Icon win = null;
+        if(round % 4 == 1){
+            win = new ImageIcon("../Ludo/img/winner_red.jpg");
+        }
+        else if(round % 4 == 2){
+            win = new ImageIcon("../Ludo/img/winner_green.jpg");
+        }
+        else if(round % 4 == 3){
+            win = new ImageIcon("../Ludo/img/winner_yellow.jpg");
+        }
+        else if(round % 4 == 0){
+            win = new ImageIcon("../Ludo/img/winner_blue.jpg");
+        }
+        return win;
+        
+    }
+    
 }

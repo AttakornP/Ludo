@@ -65,6 +65,8 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelP3_1 = new javax.swing.JLabel();
         LayerP4_1 = new javax.swing.JLayeredPane();
         LabelP4_1 = new javax.swing.JLabel();
+        LayerWin = new javax.swing.JLayeredPane();
+        LabelWin = new javax.swing.JLabel();
         LabelBG = new javax.swing.JLabel();
         bt_roll_die = new javax.swing.JButton();
         status = new javax.swing.JLabel();
@@ -129,11 +131,21 @@ public class BoardPanel extends javax.swing.JPanel {
         //==Add player Blue 
         Icon P4_1 = new ImageIcon("../Ludo/img/Blue1.png");
         LabelP4_1 = new JLabel(P4_1);
-
         //==
 
+        //==Add Win
+        //Icon win = new ImageIcon("../Ludo/img/winner_red.jpg");
+        //LabelWin = new JLabel(win);
+        
+        
         setBackground(new java.awt.Color(255, 51, 51));
         setPreferredSize(new java.awt.Dimension(850, 650));
+        
+        //== Layer Win
+        LabelWin.setBounds(0, 0, 650, 650);
+        LayerWin.add(LabelWin, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerWin.setBounds(0, 0, 850, 650);
+        LayerP4_1.add(LayerWin, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         //== Layer P4_1
         LabelP4_1.setBounds(433, 127, 36, 36);
@@ -281,8 +293,35 @@ public class BoardPanel extends javax.swing.JPanel {
             P4.setPoY_current(y);
             LabelP4_1.setBounds(x, y, 36, 36);
         }
-        round++;
+        System.out.println("P1"+P1.gettable_current());
+        System.out.println("P2"+P2.gettable_current());
+        System.out.println("P3"+P3.gettable_current());
+        System.out.println("P4"+P4.gettable_current());
+        Icon win = null;    
         
+        if(P1.gettable_current() == 39){
+           win = nextP.show_win(round);
+           LabelWin.setIcon(win);
+           bt_roll_die.setEnabled(false);
+           
+        }
+        else if(P2.gettable_current() == 39){
+           win = nextP.show_win(round);
+           LabelWin.setIcon(win);
+           bt_roll_die.setEnabled(false);
+        }
+        else if(P3.gettable_current() == 39){
+           win = nextP.show_win(round);
+           LabelWin.setIcon(win);
+           bt_roll_die.setEnabled(false);
+        }
+        else if(P4.gettable_current() == 39){
+           win = nextP.show_win(round);
+           LabelWin.setIcon(win);
+           bt_roll_die.setEnabled(false);
+        }
+        round++;
+       
         
     }
     
@@ -295,6 +334,8 @@ public class BoardPanel extends javax.swing.JPanel {
     private javax.swing.JLabel LabelP2_1;
     private javax.swing.JLabel LabelP3_1;
     private javax.swing.JLabel LabelP4_1;
+    private javax.swing.JLabel LabelWin;
+    private javax.swing.JLayeredPane LayerWin;
     private javax.swing.JLayeredPane LayerBG;
     private javax.swing.JLayeredPane LayerP1_1;
     private javax.swing.JLayeredPane LayerP2_1;
