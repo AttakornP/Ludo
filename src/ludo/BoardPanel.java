@@ -1,5 +1,6 @@
 package ludo;
 
+import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -66,6 +67,7 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelP4_1 = new javax.swing.JLabel();
         LabelBG = new javax.swing.JLabel();
         bt_roll_die = new javax.swing.JButton();
+        status = new javax.swing.JLabel();
         
         
         
@@ -88,8 +90,10 @@ public class BoardPanel extends javax.swing.JPanel {
         P4.setPoY_current(127);
         P1.settable_current(0);
         
-        
-        
+        status.setText("Status");
+        status.setBackground(Color.red);
+        status.setBounds(700, 100, 100, 50);
+        LayerP4_1.add(status, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         bt_roll_die.setText("Die");
         Icon die = new ImageIcon("../Ludo/img/dice.png");
@@ -189,6 +193,9 @@ public class BoardPanel extends javax.swing.JPanel {
         boolean conStartP3 = P3.getPoX_start() == P3.getPoX_current() && P3.getPoY_start() == P3.getPoY_current();
         boolean conStartP4 = P4.getPoX_start() == P4.getPoX_current() && P4.getPoY_start() == P4.getPoY_current();
         
+        Icon color_status = nextP.show_status(round);
+        status.setIcon(color_status);
+        
         if(round % 4 == 1 && conStartP1){
             if(point_die == 6){
                 x = poX_R[0];
@@ -283,6 +290,7 @@ public class BoardPanel extends javax.swing.JPanel {
     
     // Variables declaration - do not modify
     private javax.swing.JLabel LabelBG;
+    private javax.swing.JLabel status;
     private javax.swing.JLabel LabelP1_1;
     private javax.swing.JLabel LabelP2_1;
     private javax.swing.JLabel LabelP3_1;
