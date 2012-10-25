@@ -8,9 +8,27 @@ public class Player {
     
     private int     poX_start;
     private int     poY_start;
+    private int     poX_current;
+    private int     poY_current;
     private boolean status = false;
     private String  color;
     private int     table_current;
+
+    public int getPoX_current() {
+        return poX_current;
+    }
+
+    public int getPoY_current() {
+        return poY_current;
+    }
+
+    public void setPoX_current(int poX_current) {
+        this.poX_current = poX_current;
+    }
+
+    public void setPoY_current(int poY_current) {
+        this.poY_current = poY_current;
+    }
 
 
     private Image   playerImg;

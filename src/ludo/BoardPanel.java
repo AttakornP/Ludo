@@ -72,13 +72,22 @@ public class BoardPanel extends javax.swing.JPanel {
         //set Player position to start
         P1.setPoX_start(108);
         P1.setPoY_start(184);
+        P1.setPoX_current(108);
+        P1.setPoY_current(184);
         P2.setPoX_start(162);
         P2.setPoY_start(475);
+        P2.setPoX_current(162);
+        P2.setPoY_current(475);
         P3.setPoX_start(432);
         P3.setPoY_start(495);
+        P3.setPoX_current(432);
+        P3.setPoY_current(495);
         P4.setPoX_start(433);
         P4.setPoY_start(127);
+        P4.setPoX_current(433);
+        P4.setPoY_current(127);
         P1.settable_current(0);
+        
         
         
         
@@ -172,42 +181,97 @@ public class BoardPanel extends javax.swing.JPanel {
         Icon dice = point.show_point(point_die);
         bt_roll_die.setIcon(dice);
         int nextT = 0;
-        int x = 0;
-        int y = 0;        
+        int x ;
+        int y ;        
+        
+        boolean conStartP1 = P1.getPoX_start() == P1.getPoX_current() && P1.getPoY_start() == P1.getPoY_current();
+        boolean conStartP2 = P2.getPoX_start() == P2.getPoX_current() && P2.getPoY_start() == P2.getPoY_current();
+        boolean conStartP3 = P3.getPoX_start() == P3.getPoX_current() && P3.getPoY_start() == P3.getPoY_current();
+        boolean conStartP4 = P4.getPoX_start() == P4.getPoX_current() && P4.getPoY_start() == P4.getPoY_current();
+        
+        if(round % 4 == 1 && conStartP1){
+            if(point_die == 6){
+                x = poX_R[0];
+                y = poY_R[0];
+                P1.setPoX_current(x);
+                P1.setPoY_current(y);
+                LabelP1_1.setBounds(x, y, 36, 36);
+            }
+            
+        }
+        else if(round % 4 == 2 && conStartP2){
+            if(point_die == 6){
+                x = poX_G[0];
+                y = poY_G[0];
+                P2.setPoX_current(x);
+                P2.setPoY_current(y);
+                LabelP2_1.setBounds(x, y, 36, 36);
+            }
+            
+        }
+        else if(round % 4 == 3 && conStartP3){
+            if(point_die == 6){
+                x = poX_Y[0];
+                y = poY_Y[0];
+                P3.setPoX_current(x);
+                P3.setPoY_current(y);
+                LabelP3_1.setBounds(x, y, 36, 36);
+            }
+            
+        }
+        else if(round % 4 == 0 && conStartP4){
+            if(point_die == 6){
+                x = poX_B[0];
+                y = poY_B[0];
+                P4.setPoX_current(x);
+                P4.setPoY_current(y);
+                LabelP4_1.setBounds(x, y, 36, 36);
+            }
+            
+        }
+        
         //==P1 Red Play     
-        if(round % 4 == 1){
+        if(round % 4 == 1 && conStartP1 == false){
             nextT = nextP.nextPosition(P1.gettable_current(), point_die);
             P1.settable_current(nextT);
 
             x = poX_R[P1.gettable_current()];
             y = poY_R[P1.gettable_current()];
+            P1.setPoX_current(x);
+            P1.setPoY_current(y);
             LabelP1_1.setBounds(x, y, 36, 36);
         }
         //==P2 Green Play
-        else if(round % 4 == 2){
+        else if(round % 4 == 2 && conStartP2 == false){
             nextT = nextP.nextPosition(P2.gettable_current(), point_die);
             P2.settable_current(nextT);
         
             x = poX_G[P2.gettable_current()];
             y = poY_G[P2.gettable_current()];
+            P2.setPoX_current(x);
+            P2.setPoY_current(y);
             LabelP2_1.setBounds(x, y, 36, 36);
         }
         //==P3 Yellow Play
-        else if(round % 4 == 3){
+        else if(round % 4 == 3 && conStartP3 == false){
             nextT = nextP.nextPosition(P3.gettable_current(), point_die);
             P3.settable_current(nextT);
         
             x = poX_Y[P3.gettable_current()];
             y = poY_Y[P3.gettable_current()];
+            P3.setPoX_current(x);
+            P3.setPoY_current(y);
             LabelP3_1.setBounds(x, y, 36, 36);
         }
         //==P4 Blue Play
-        else{
+        else if(round % 4 == 0 && conStartP4 == false){
             nextT = nextP.nextPosition(P4.gettable_current(), point_die);
             P4.settable_current(nextT);
         
             x = poX_B[P4.gettable_current()];
             y = poY_B[P4.gettable_current()];
+            P4.setPoX_current(x);
+            P4.setPoY_current(y);
             LabelP4_1.setBounds(x, y, 36, 36);
         }
         round++;
