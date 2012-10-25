@@ -42,6 +42,17 @@ public class BoardPanel extends javax.swing.JPanel {
         Player P4 = new Player();   
     
         private int round = 1;
+        
+        Icon Red = new ImageIcon("../Ludo/img/statusRed.png");
+        Icon Green = new ImageIcon("../Ludo/img/statusGreen.png");
+        Icon Yellow = new ImageIcon("../Ludo/img/statusYellow.png");
+        Icon Blue = new ImageIcon("../Ludo/img/statusBlue.png");
+        Icon die = new ImageIcon("../Ludo/img/dice.png");
+        Icon BG = new ImageIcon("../Ludo/img/Ludo.png");
+        Icon P1_1 = new ImageIcon("../Ludo/img/Red1.png");
+        Icon P2_1 = new ImageIcon("../Ludo/img/Green1.png");
+        Icon P3_1 = new ImageIcon("../Ludo/img/Yellow1.png"); 
+        Icon P4_1 = new ImageIcon("../Ludo/img/Blue1.png");
     
     public BoardPanel() {
         initComponents();
@@ -70,7 +81,10 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelBG = new javax.swing.JLabel();
         bt_roll_die = new javax.swing.JButton();
         bt_exit = new javax.swing.JButton();
-        status = new javax.swing.JLabel();
+        statusR = new javax.swing.JLabel();
+        statusG = new javax.swing.JLabel();
+        statusY = new javax.swing.JLabel();
+        statusB = new javax.swing.JLabel();
         
         
         
@@ -93,10 +107,29 @@ public class BoardPanel extends javax.swing.JPanel {
         P4.setPoY_current(127);
         P1.settable_current(0);
         
-        status.setText("Status");
-        status.setBackground(Color.red);
-        status.setBounds(700, 100, 100, 50);
-        LayerP4_1.add(status, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        //status Red
+        
+        statusR.setIcon(Red);
+        statusR.setBounds(700, 100, 100, 50);
+        LayerP4_1.add(statusR, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //status Green
+        
+        statusG.setIcon(Green);
+        statusG.setBounds(700, 200, 100, 50);
+        LayerP4_1.add(statusG, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //status Yellow
+        
+        statusY.setIcon(Yellow);
+        statusY.setBounds(700, 300, 100, 50);
+        LayerP4_1.add(statusY, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //status Blue
+        
+        statusB.setIcon(Blue);
+        statusB.setBounds(700, 400, 100, 50);
+        LayerP4_1.add(statusB, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         //bt exit
         bt_exit.setText("Exit");
@@ -114,7 +147,7 @@ public class BoardPanel extends javax.swing.JPanel {
         
         //bt Dice
         bt_roll_die.setText("Die");
-        Icon die = new ImageIcon("../Ludo/img/dice.png");
+        
         
         bt_roll_die.setIcon(die);
         bt_roll_die.addActionListener(new java.awt.event.ActionListener() {
@@ -126,26 +159,26 @@ public class BoardPanel extends javax.swing.JPanel {
         LayerP4_1.add(bt_roll_die, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         //==Add BG 
-        Icon BG = new ImageIcon("../Ludo/img/Ludo.png");
+        
         LabelBG = new JLabel(BG);
         //==
         
         //==Add player Red 
-        Icon P1_1 = new ImageIcon("../Ludo/img/Red1.png");
+
         LabelP1_1 = new JLabel(P1_1);
         //==
         
         //==Add player Green 
-        Icon P2_1 = new ImageIcon("../Ludo/img/Green1.png");
+
         LabelP2_1 = new JLabel(P2_1);
         
         //==Add player Yellow 
-        Icon P3_1 = new ImageIcon("../Ludo/img/Yellow1.png");
+
         LabelP3_1 = new JLabel(P3_1);
         //==
         
         //==Add player Blue 
-        Icon P4_1 = new ImageIcon("../Ludo/img/Blue1.png");
+
         LabelP4_1 = new JLabel(P4_1);
         //==
 
@@ -222,9 +255,13 @@ public class BoardPanel extends javax.swing.JPanel {
         boolean conStartP4 = P4.getPoX_start() == P4.getPoX_current() && P4.getPoY_start() == P4.getPoY_current();
         
         Icon color_status = nextP.show_status(round);
-        status.setIcon(color_status);
+        
         
         if(round % 4 == 1 && conStartP1){
+            statusR.setIcon(color_status);
+            statusG.setIcon(Green);
+            statusY.setIcon(Yellow);
+            statusB.setIcon(Blue);
             if(point_die == 6){
                 x = poX_R[0];
                 y = poY_R[0];
@@ -235,6 +272,10 @@ public class BoardPanel extends javax.swing.JPanel {
             
         }
         else if(round % 4 == 2 && conStartP2){
+            statusR.setIcon(Red);
+            statusG.setIcon(color_status);
+            statusY.setIcon(Yellow);
+            statusB.setIcon(Blue);
             if(point_die == 6){
                 x = poX_G[0];
                 y = poY_G[0];
@@ -245,6 +286,10 @@ public class BoardPanel extends javax.swing.JPanel {
             
         }
         else if(round % 4 == 3 && conStartP3){
+            statusR.setIcon(Red);
+            statusG.setIcon(Green);
+            statusY.setIcon(color_status);
+            statusB.setIcon(Blue);
             if(point_die == 6){
                 x = poX_Y[0];
                 y = poY_Y[0];
@@ -255,6 +300,10 @@ public class BoardPanel extends javax.swing.JPanel {
             
         }
         else if(round % 4 == 0 && conStartP4){
+            statusR.setIcon(Red);
+            statusG.setIcon(Green);
+            statusY.setIcon(Yellow);
+            statusB.setIcon(color_status);
             if(point_die == 6){
                 x = poX_B[0];
                 y = poY_B[0];
@@ -270,6 +319,11 @@ public class BoardPanel extends javax.swing.JPanel {
         boolean over4 = false;
         //==P1 Red Play     
         if(round % 4 == 1 && conStartP1 == false){
+            statusR.setIcon(color_status);
+            statusG.setIcon(Green);
+            statusY.setIcon(Yellow);
+            statusB.setIcon(Blue);
+            
             nextT = nextP.nextPosition(P1.gettable_current(), point_die);
             P1.settable_current(nextT);
 
@@ -303,6 +357,11 @@ public class BoardPanel extends javax.swing.JPanel {
         }
         //==P2 Green Play
         else if(round % 4 == 2 && conStartP2 == false){
+            statusR.setIcon(Red);
+            statusG.setIcon(color_status);
+            statusY.setIcon(Yellow);
+            statusB.setIcon(Blue);
+            
             nextT = nextP.nextPosition(P2.gettable_current(), point_die);
             P2.settable_current(nextT);
         
@@ -335,6 +394,11 @@ public class BoardPanel extends javax.swing.JPanel {
         }
         //==P3 Yellow Play
         else if(round % 4 == 3 && conStartP3 == false){
+            statusR.setIcon(Red);
+            statusG.setIcon(Green);
+            statusY.setIcon(color_status);
+            statusB.setIcon(Blue);
+            
             nextT = nextP.nextPosition(P3.gettable_current(), point_die);
             P3.settable_current(nextT);
         
@@ -368,6 +432,12 @@ public class BoardPanel extends javax.swing.JPanel {
         }
         //==P4 Blue Play
         else if(round % 4 == 0 && conStartP4 == false){
+
+            statusR.setIcon(Red);
+            statusG.setIcon(Green);
+            statusY.setIcon(Yellow);
+            statusB.setIcon(color_status);
+
             
             nextT = nextP.nextPosition(P4.gettable_current(), point_die);
             P4.settable_current(nextT);
@@ -433,7 +503,10 @@ public class BoardPanel extends javax.swing.JPanel {
     
     // Variables declaration - do not modify
     private javax.swing.JLabel LabelBG;
-    private javax.swing.JLabel status;
+    private javax.swing.JLabel statusR;
+    private javax.swing.JLabel statusG;
+    private javax.swing.JLabel statusY;
+    private javax.swing.JLabel statusB;
     private javax.swing.JLabel LabelP1_1;
     private javax.swing.JLabel LabelP2_1;
     private javax.swing.JLabel LabelP3_1;

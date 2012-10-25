@@ -33,16 +33,16 @@ public class Move {
         
         Icon colour = null;
         if(round % 4 == 1){
-            colour = new ImageIcon("../Ludo/img/statusRed.png");
+            colour = new ImageIcon("../Ludo/img/statusRed1.png");
         }
         else if(round % 4 == 2){
-            colour = new ImageIcon("../Ludo/img/statusGreen.png");
+            colour = new ImageIcon("../Ludo/img/statusGreen1.png");
         }
         else if(round % 4 == 3){
-            colour = new ImageIcon("../Ludo/img/statusYellow.png");
+            colour = new ImageIcon("../Ludo/img/statusYellow1.png");
         }
         else if(round % 4 == 0){
-            colour = new ImageIcon("../Ludo/img/statusBlue.png");
+            colour = new ImageIcon("../Ludo/img/statusBlue1.png");
         }
         return colour;
         
