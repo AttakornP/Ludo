@@ -13,9 +13,6 @@ import javax.swing.text.Position;
  */
 public class Move {
     
-    public int positionX;
-    public int positionY;
-    
     
     
     public int nextPosition(int current_table, int point_die){
