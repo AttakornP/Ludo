@@ -368,6 +368,7 @@ public class BoardPanel extends javax.swing.JPanel {
         }
         //==P4 Blue Play
         else if(round % 4 == 0 && conStartP4 == false){
+            
             nextT = nextP.nextPosition(P4.gettable_current(), point_die);
             P4.settable_current(nextT);
         
