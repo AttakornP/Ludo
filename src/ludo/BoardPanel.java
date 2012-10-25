@@ -248,7 +248,10 @@ public class BoardPanel extends javax.swing.JPanel {
             }
             
         }
-        
+        boolean over1 = false;
+        boolean over2 = false;
+        boolean over3 = false;
+        boolean over4 = false;
         //==P1 Red Play     
         if(round % 4 == 1 && conStartP1 == false){
             nextT = nextP.nextPosition(P1.gettable_current(), point_die);
@@ -259,6 +262,28 @@ public class BoardPanel extends javax.swing.JPanel {
             P1.setPoX_current(x);
             P1.setPoY_current(y);
             LabelP1_1.setBounds(x, y, 36, 36);
+            
+            //==over 
+            over2 = nextP.move_over(x, y, P2.getPoX_current(), P2.getPoY_current());
+            over3 = nextP.move_over(x, y, P3.getPoX_current(), P3.getPoY_current());
+            over4 = nextP.move_over(x, y, P4.getPoX_current(), P4.getPoY_current());
+            if(over2){
+                P2.setPoX_current(P2.getPoX_start());
+                P2.setPoY_current(P2.getPoY_start());
+                LabelP2_1.setBounds(P2.getPoX_current(), P2.getPoY_current(), 36, 36);
+            }
+            else if(over3){
+                P3.setPoX_current(P3.getPoX_start());
+                P3.setPoY_current(P3.getPoY_start());
+                LabelP3_1.setBounds(P3.getPoX_current(), P3.getPoY_current(), 36, 36);
+            }
+            else if(over4){
+                P4.setPoX_current(P4.getPoX_start());
+                P4.setPoY_current(P4.getPoY_start());
+                LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), 36, 36);
+            }
+            //==
+            
         }
         //==P2 Green Play
         else if(round % 4 == 2 && conStartP2 == false){
@@ -270,6 +295,27 @@ public class BoardPanel extends javax.swing.JPanel {
             P2.setPoX_current(x);
             P2.setPoY_current(y);
             LabelP2_1.setBounds(x, y, 36, 36);
+            
+            //==over 
+            over1 = nextP.move_over(x, y, P1.getPoX_current(), P1.getPoY_current());
+            over3 = nextP.move_over(x, y, P3.getPoX_current(), P3.getPoY_current());
+            over4 = nextP.move_over(x, y, P4.getPoX_current(), P4.getPoY_current());
+            if(over1){
+                P1.setPoX_current(P1.getPoX_start());
+                P1.setPoY_current(P1.getPoY_start());
+                LabelP1_1.setBounds(P1.getPoX_current(), P1.getPoY_current(), 36, 36);
+            }
+            else if(over3){
+                P3.setPoX_current(P3.getPoX_start());
+                P3.setPoY_current(P3.getPoY_start());
+                LabelP3_1.setBounds(P3.getPoX_current(), P3.getPoY_current(), 36, 36);
+            }
+            else if(over4){
+                P4.setPoX_current(P4.getPoX_start());
+                P4.setPoY_current(P4.getPoY_start());
+                LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), 36, 36);
+            }
+            //==
         }
         //==P3 Yellow Play
         else if(round % 4 == 3 && conStartP3 == false){
@@ -281,6 +327,28 @@ public class BoardPanel extends javax.swing.JPanel {
             P3.setPoX_current(x);
             P3.setPoY_current(y);
             LabelP3_1.setBounds(x, y, 36, 36);
+            
+            //==over 
+            over2 = nextP.move_over(x, y, P2.getPoX_current(), P2.getPoY_current());
+            over1 = nextP.move_over(x, y, P1.getPoX_current(), P1.getPoY_current());
+            over4 = nextP.move_over(x, y, P4.getPoX_current(), P4.getPoY_current());
+            if(over2){
+                P2.setPoX_current(P2.getPoX_start());
+                P2.setPoY_current(P2.getPoY_start());
+                LabelP2_1.setBounds(P2.getPoX_current(), P2.getPoY_current(), 36, 36);
+            }
+            else if(over1){
+                P1.setPoX_current(P1.getPoX_start());
+                P1.setPoY_current(P1.getPoY_start());
+                LabelP1_1.setBounds(P1.getPoX_current(), P1.getPoY_current(), 36, 36);
+            }
+            else if(over4){
+                P4.setPoX_current(P4.getPoX_start());
+                P4.setPoY_current(P4.getPoY_start());
+                LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), 36, 36);
+            }
+            //==
+            
         }
         //==P4 Blue Play
         else if(round % 4 == 0 && conStartP4 == false){
@@ -292,11 +360,28 @@ public class BoardPanel extends javax.swing.JPanel {
             P4.setPoX_current(x);
             P4.setPoY_current(y);
             LabelP4_1.setBounds(x, y, 36, 36);
+            
+            //==over 
+            over2 = nextP.move_over(x, y, P2.getPoX_current(), P2.getPoY_current());
+            over3 = nextP.move_over(x, y, P3.getPoX_current(), P3.getPoY_current());
+            over1 = nextP.move_over(x, y, P1.getPoX_current(), P1.getPoY_current());
+            if(over2){
+                P2.setPoX_current(P2.getPoX_start());
+                P2.setPoY_current(P2.getPoY_start());
+                LabelP2_1.setBounds(P2.getPoX_current(), P2.getPoY_current(), 36, 36);
+            }
+            else if(over3){
+                P3.setPoX_current(P3.getPoX_start());
+                P3.setPoY_current(P3.getPoY_start());
+                LabelP3_1.setBounds(P3.getPoX_current(), P3.getPoY_current(), 36, 36);
+            }
+            else if(over1){
+                P1.setPoX_current(P1.getPoX_start());
+                P1.setPoY_current(P1.getPoY_start());
+                LabelP1_1.setBounds(P1.getPoX_current(), P1.getPoY_current(), 36, 36);
+            }
+            //==
         }
-        System.out.println("P1"+P1.gettable_current());
-        System.out.println("P2"+P2.gettable_current());
-        System.out.println("P3"+P3.gettable_current());
-        System.out.println("P4"+P4.gettable_current());
         Icon win = null;    
         
         if(P1.gettable_current() == 39){
