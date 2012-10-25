@@ -69,6 +69,7 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelWin = new javax.swing.JLabel();
         LabelBG = new javax.swing.JLabel();
         bt_roll_die = new javax.swing.JButton();
+        bt_exit = new javax.swing.JButton();
         status = new javax.swing.JLabel();
         
         
@@ -97,6 +98,21 @@ public class BoardPanel extends javax.swing.JPanel {
         status.setBounds(700, 100, 100, 50);
         LayerP4_1.add(status, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
+        //bt exit
+        bt_exit.setText("Exit");
+        //Icon die = new ImageIcon("../Ludo/img/dice.png");
+        
+        //bt_exit.setIcon(die);
+        bt_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_exit_dieActionPerformed(evt);
+            }
+        });        
+        bt_exit.setBounds(750, 0, 100, 50);
+        LayerP4_1.add(bt_exit, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        
+        //bt Dice
         bt_roll_die.setText("Die");
         Icon die = new ImageIcon("../Ludo/img/dice.png");
         
@@ -410,7 +426,9 @@ public class BoardPanel extends javax.swing.JPanel {
         
     }
     
-    
+    private void bt_exit_dieActionPerformed(java.awt.event.ActionEvent evt) {
+        System.exit(0);
+    }
     
     // Variables declaration - do not modify
     private javax.swing.JLabel LabelBG;
@@ -427,5 +445,6 @@ public class BoardPanel extends javax.swing.JPanel {
     private javax.swing.JLayeredPane LayerP3_1;
     private javax.swing.JLayeredPane LayerP4_1;
     private javax.swing.JButton bt_roll_die;
+    private javax.swing.JButton bt_exit;
     // End of variables declaration
 }
