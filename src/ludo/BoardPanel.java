@@ -800,22 +800,26 @@ public class BoardPanel extends javax.swing.JPanel {
         
         //win
         if(P1.gettable_current() == 39 && P_Red_Win == 3){
+           LabelWin.setVisible(true);
            win = nextP.show_win(round);
            LabelWin.setIcon(win);
            bt_roll_die.setEnabled(false);
            
         }
         else if(P2.gettable_current() == 39 && P_Green_Win == 3){
+           LabelWin.setVisible(true);
            win = nextP.show_win(round);
            LabelWin.setIcon(win);
            bt_roll_die.setEnabled(false);
         }
         else if(P3.gettable_current() == 39 && P_Yellow_Win == 3){
+           LabelWin.setVisible(true);
            win = nextP.show_win(round);
            LabelWin.setIcon(win);
            bt_roll_die.setEnabled(false);
         }
         else if(P4.gettable_current() == 39 && P_Blue_Win == 3){
+           LabelWin.setVisible(true);
            win = nextP.show_win(round);
            LabelWin.setIcon(win);
            bt_roll_die.setEnabled(false);
@@ -884,6 +888,11 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelP4_2.setVisible(true);
         LabelP4_3.setVisible(true);
         LabelP4_4.setVisible(true);
+        
+        P_Red_Win = 0;
+        P_Green_Win = 0;
+        P_Yellow_Win = 0;
+        P_Blue_Win = 0;
         
         
     
