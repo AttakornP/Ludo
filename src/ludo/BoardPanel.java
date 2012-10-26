@@ -837,12 +837,23 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelWin.setVisible(false);
         LabelWin.setIcon(win);
         
+        //status to playing
+        Move nextP = new Move();
+        Icon color_status = nextP.show_status(round);
+        statusR.setIcon(color_status);
+        statusG.setIcon(Green);
+        statusY.setIcon(Yellow);
+        statusB.setIcon(Blue);
+        
         P1.setPoX_start(108);
         P1.setPoY_start(184);
         P1.setPoX_current(108);
         P1.setPoY_current(184);
         P1.settable_current(0);
         LabelP1_1.setBounds(P1.getPoX_current(), P1.getPoY_current(), 36, 36);
+        LabelP1_2.setVisible(true);
+        LabelP1_3.setVisible(true);
+        LabelP1_4.setVisible(true);
         
         P2.setPoX_start(162);
         P2.setPoY_start(475);
@@ -850,6 +861,9 @@ public class BoardPanel extends javax.swing.JPanel {
         P2.setPoY_current(475);
         P2.settable_current(0);
         LabelP2_1.setBounds(P2.getPoX_current(), P2.getPoY_current(), 36, 36);
+        LabelP2_2.setVisible(true);
+        LabelP2_3.setVisible(true);
+        LabelP2_4.setVisible(true);
         
         P3.setPoX_start(432);
         P3.setPoY_start(495);
@@ -857,6 +871,9 @@ public class BoardPanel extends javax.swing.JPanel {
         P3.setPoY_current(495);
         P3.settable_current(0);
         LabelP3_1.setBounds(P3.getPoX_current(), P3.getPoY_current(), 36, 36);
+        LabelP3_2.setVisible(true);
+        LabelP3_3.setVisible(true);
+        LabelP3_4.setVisible(true);
         
         P4.setPoX_start(433);
         P4.setPoY_start(127);
@@ -864,6 +881,9 @@ public class BoardPanel extends javax.swing.JPanel {
         P4.setPoY_current(127);
         P4.settable_current(0);
         LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), 36, 36);
+        LabelP4_2.setVisible(true);
+        LabelP4_3.setVisible(true);
+        LabelP4_4.setVisible(true);
         
         
     
