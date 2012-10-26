@@ -39,7 +39,11 @@ public class BoardPanel extends javax.swing.JPanel {
         Player P1 = new Player();
         Player P2 = new Player();
         Player P3 = new Player();
-        Player P4 = new Player();   
+        Player P4 = new Player();
+        Player P1_2 = new Player();
+        Player P2_2 = new Player();
+        Player P3_2 = new Player();
+        Player P4_2 = new Player();
     
         private int round = 1;
         
@@ -53,6 +57,11 @@ public class BoardPanel extends javax.swing.JPanel {
         Icon P2_1 = new ImageIcon("../Ludo/img/Green1.png");
         Icon P3_1 = new ImageIcon("../Ludo/img/Yellow1.png"); 
         Icon P4_1 = new ImageIcon("../Ludo/img/Blue1.png");
+        
+        private int P_Red_start = 0;
+        private int P_Green_start = 0;
+        private int P_Yellow_start = 0;
+        private int P_Blue_start = 0;
     
     public BoardPanel() {
         initComponents();
@@ -129,7 +138,24 @@ public class BoardPanel extends javax.swing.JPanel {
         P4.setPoY_start(127);
         P4.setPoX_current(433);
         P4.setPoY_current(127);
-        P1.settable_current(0);
+        
+        P1_2.setPoX_start(143);
+        P1_2.setPoY_start(153);
+        P1_2.setPoX_current(143);
+        P1_2.setPoY_current(153);
+        P2_2.setPoX_start(108);
+        P2_2.setPoY_start(450);
+        P2_2.setPoX_current(108);
+        P2_2.setPoY_current(450);
+        P3_2.setPoX_start(475);
+        P3_2.setPoY_start(470);
+        P3_2.setPoX_current(475);
+        P3_2.setPoY_current(470);
+        P4_2.setPoX_start(468);
+        P4_2.setPoY_start(163);
+        P4_2.setPoX_current(468);
+        P4_2.setPoY_current(163);
+        //P1.settable_current(0);
         
         //status Red
         
@@ -352,7 +378,6 @@ public class BoardPanel extends javax.swing.JPanel {
     
     
         private void bt_roll_dieActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         Die point = new Die();
         Move nextP = new Move();
         int point_die = point.roll_die();
@@ -362,15 +387,25 @@ public class BoardPanel extends javax.swing.JPanel {
         int x ;
         int y ;        
         
+        //Do check players stand at start position
         boolean conStartP1 = P1.getPoX_start() == P1.getPoX_current() && P1.getPoY_start() == P1.getPoY_current();
         boolean conStartP2 = P2.getPoX_start() == P2.getPoX_current() && P2.getPoY_start() == P2.getPoY_current();
         boolean conStartP3 = P3.getPoX_start() == P3.getPoX_current() && P3.getPoY_start() == P3.getPoY_current();
         boolean conStartP4 = P4.getPoX_start() == P4.getPoX_current() && P4.getPoY_start() == P4.getPoY_current();
+        boolean conStartP1_2 = P1_2.getPoX_start() == P1_2.getPoX_current() && P1_2.getPoY_start() == P1_2.getPoY_current();
+        boolean conStartP2_2 = P2_2.getPoX_start() == P2_2.getPoX_current() && P2_2.getPoY_start() == P2_2.getPoY_current();
+        boolean conStartP3_2 = P3_2.getPoX_start() == P3_2.getPoX_current() && P3_2.getPoY_start() == P3_2.getPoY_current();
+        boolean conStartP4_2 = P4_2.getPoX_start() == P4_2.getPoX_current() && P4_2.getPoY_start() == P4_2.getPoY_current();
         
+        //show status to playing
         Icon color_status = nextP.show_status(round);
         
         
+        
+        //condition to start
         if(round % 4 == 1 && conStartP1){
+            
+            //status to playing
             statusR.setIcon(color_status);
             statusG.setIcon(Green);
             statusY.setIcon(Yellow);
@@ -385,6 +420,8 @@ public class BoardPanel extends javax.swing.JPanel {
             
         }
         else if(round % 4 == 2 && conStartP2){
+            
+            //status to playing
             statusR.setIcon(Red);
             statusG.setIcon(color_status);
             statusY.setIcon(Yellow);
@@ -399,6 +436,8 @@ public class BoardPanel extends javax.swing.JPanel {
             
         }
         else if(round % 4 == 3 && conStartP3){
+            
+            //status to playing
             statusR.setIcon(Red);
             statusG.setIcon(Green);
             statusY.setIcon(color_status);
@@ -413,6 +452,8 @@ public class BoardPanel extends javax.swing.JPanel {
             
         }
         else if(round % 4 == 0 && conStartP4){
+            
+            //status to playing
             statusR.setIcon(Red);
             statusG.setIcon(Green);
             statusY.setIcon(Yellow);
@@ -426,12 +467,25 @@ public class BoardPanel extends javax.swing.JPanel {
             }
             
         }
+        //======================================================================
+        
+        
+        
+        
+        
+        //Condition to move and move over
         boolean over1 = false;
         boolean over2 = false;
         boolean over3 = false;
         boolean over4 = false;
+        boolean over1_2 = false;
+        boolean over2_2 = false;
+        boolean over3_2 = false;
+        boolean over4_2 = false;
         //==P1 Red Play     
         if(round % 4 == 1 && conStartP1 == false){
+            
+            //status to playing
             statusR.setIcon(color_status);
             statusG.setIcon(Green);
             statusY.setIcon(Yellow);
@@ -450,6 +504,7 @@ public class BoardPanel extends javax.swing.JPanel {
             over2 = nextP.move_over(x, y, P2.getPoX_current(), P2.getPoY_current());
             over3 = nextP.move_over(x, y, P3.getPoX_current(), P3.getPoY_current());
             over4 = nextP.move_over(x, y, P4.getPoX_current(), P4.getPoY_current());
+            
             if(over2){
                 P2.setPoX_current(P2.getPoX_start());
                 P2.setPoY_current(P2.getPoY_start());
@@ -470,6 +525,8 @@ public class BoardPanel extends javax.swing.JPanel {
         }
         //==P2 Green Play
         else if(round % 4 == 2 && conStartP2 == false){
+            
+            //status to playing
             statusR.setIcon(Red);
             statusG.setIcon(color_status);
             statusY.setIcon(Yellow);
@@ -488,6 +545,7 @@ public class BoardPanel extends javax.swing.JPanel {
             over1 = nextP.move_over(x, y, P1.getPoX_current(), P1.getPoY_current());
             over3 = nextP.move_over(x, y, P3.getPoX_current(), P3.getPoY_current());
             over4 = nextP.move_over(x, y, P4.getPoX_current(), P4.getPoY_current());
+            
             if(over1){
                 P1.setPoX_current(P1.getPoX_start());
                 P1.setPoY_current(P1.getPoY_start());
@@ -503,10 +561,14 @@ public class BoardPanel extends javax.swing.JPanel {
                 P4.setPoY_current(P4.getPoY_start());
                 LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), 36, 36);
             }
+
+            
             //==
         }
         //==P3 Yellow Play
         else if(round % 4 == 3 && conStartP3 == false){
+            
+            //status to playing
             statusR.setIcon(Red);
             statusG.setIcon(Green);
             statusY.setIcon(color_status);
@@ -525,6 +587,7 @@ public class BoardPanel extends javax.swing.JPanel {
             over2 = nextP.move_over(x, y, P2.getPoX_current(), P2.getPoY_current());
             over1 = nextP.move_over(x, y, P1.getPoX_current(), P1.getPoY_current());
             over4 = nextP.move_over(x, y, P4.getPoX_current(), P4.getPoY_current());
+
             if(over2){
                 P2.setPoX_current(P2.getPoX_start());
                 P2.setPoY_current(P2.getPoY_start());
@@ -540,12 +603,14 @@ public class BoardPanel extends javax.swing.JPanel {
                 P4.setPoY_current(P4.getPoY_start());
                 LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), 36, 36);
             }
+
             //==
             
         }
         //==P4 Blue Play
         else if(round % 4 == 0 && conStartP4 == false){
-
+            
+            //status to playing
             statusR.setIcon(Red);
             statusG.setIcon(Green);
             statusY.setIcon(Yellow);
@@ -582,6 +647,10 @@ public class BoardPanel extends javax.swing.JPanel {
             }
             //==
         }
+        
+        //======================================================================
+        
+        //Condition to check Win
         Icon win = null;    
         
         if(P1.gettable_current() == 39){
@@ -605,6 +674,7 @@ public class BoardPanel extends javax.swing.JPanel {
            LabelWin.setIcon(win);
            bt_roll_die.setEnabled(false);
         }
+        //======================================================================
         round++;
        
         

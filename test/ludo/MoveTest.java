@@ -97,4 +97,28 @@ public class MoveTest {
         assertTrue(result<37);
 
     }
+    
+    @Test
+    public void testMove_over_true() {
+        System.out.println("Move Over");
+        int nextPoX = 100;
+        int nextPoY = 200;
+        int currentPoX = 100;
+        int currentPoY = 200;
+        Move instance = new Move();
+        boolean result = instance.move_over(nextPoX, nextPoY, currentPoX, currentPoY);
+        assertTrue(result);
+    }
+    
+    @Test
+    public void testMove_over_false() {
+        System.out.println("not Move Over");
+        int nextPoX = 100;
+        int nextPoY = 300;
+        int currentPoX = 100;
+        int currentPoY = 200;
+        Move instance = new Move();
+        boolean result = instance.move_over(nextPoX, nextPoY, currentPoX, currentPoY);
+        assertFalse(result);
+    }
 }
