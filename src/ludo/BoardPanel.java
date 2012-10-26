@@ -76,6 +76,30 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelP3_1 = new javax.swing.JLabel();
         LayerP4_1 = new javax.swing.JLayeredPane();
         LabelP4_1 = new javax.swing.JLabel();
+        LayerP1_2 = new javax.swing.JLayeredPane();
+        LabelP1_2 = new javax.swing.JLabel();
+        LayerP2_2 = new javax.swing.JLayeredPane();
+        LabelP2_2 = new javax.swing.JLabel();
+        LayerP3_2 = new javax.swing.JLayeredPane();
+        LabelP3_2 = new javax.swing.JLabel();
+        LayerP4_2 = new javax.swing.JLayeredPane();
+        LabelP4_2 = new javax.swing.JLabel();
+        LayerP1_3 = new javax.swing.JLayeredPane();
+        LabelP1_3 = new javax.swing.JLabel();
+        LayerP2_3 = new javax.swing.JLayeredPane();
+        LabelP2_3 = new javax.swing.JLabel();
+        LayerP3_3 = new javax.swing.JLayeredPane();
+        LabelP3_3 = new javax.swing.JLabel();
+        LayerP4_3 = new javax.swing.JLayeredPane();
+        LabelP4_3 = new javax.swing.JLabel();
+        LayerP1_4 = new javax.swing.JLayeredPane();
+        LabelP1_4 = new javax.swing.JLabel();
+        LayerP2_4 = new javax.swing.JLayeredPane();
+        LabelP2_4 = new javax.swing.JLabel();
+        LayerP3_4 = new javax.swing.JLayeredPane();
+        LabelP3_4 = new javax.swing.JLabel();
+        LayerP4_4 = new javax.swing.JLayeredPane();
+        LabelP4_4 = new javax.swing.JLabel();
         LayerWin = new javax.swing.JLayeredPane();
         LabelWin = new javax.swing.JLabel();
         LabelBG = new javax.swing.JLabel();
@@ -166,21 +190,35 @@ public class BoardPanel extends javax.swing.JPanel {
         //==Add player Red 
 
         LabelP1_1 = new JLabel(P1_1);
+        LabelP1_2 = new JLabel(P1_1);
+        LabelP1_3 = new JLabel(P1_1);
+        LabelP1_4 = new JLabel(P1_1);
         //==
         
         //==Add player Green 
 
         LabelP2_1 = new JLabel(P2_1);
+        LabelP2_2 = new JLabel(P2_1);
+        LabelP2_3 = new JLabel(P2_1);
+        LabelP2_4 = new JLabel(P2_1);
         
         //==Add player Yellow 
 
         LabelP3_1 = new JLabel(P3_1);
+        LabelP3_2 = new JLabel(P3_1);
+        LabelP3_3 = new JLabel(P3_1);
+        LabelP3_4 = new JLabel(P3_1);
         //==
         
         //==Add player Blue 
 
         LabelP4_1 = new JLabel(P4_1);
+        LabelP4_2 = new JLabel(P4_1);
+        LabelP4_3 = new JLabel(P4_1);
+        LabelP4_4 = new JLabel(P4_1);
         //==
+        
+        
 
         //==Add Win
         //Icon win = new ImageIcon("../Ludo/img/winner_red.jpg");
@@ -194,8 +232,83 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelWin.setBounds(0, 0, 650, 650);
         LayerWin.add(LabelWin, javax.swing.JLayeredPane.DEFAULT_LAYER);
         LayerWin.setBounds(0, 0, 850, 650);
-        LayerP4_1.add(LayerWin, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP4_4.add(LayerWin, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
+        //== Layer P4_4
+        LabelP4_4.setBounds(565, 126, 36, 36);
+        LayerP4_4.add(LabelP4_4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP4_4.setBounds(0, 0, 850, 650);
+        LayerP3_4.add(LayerP4_4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        
+        //== Layer P3_4
+        LabelP3_4.setBounds(566, 431, 36, 36);
+        LayerP3_4.add(LabelP3_4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP3_4.setBounds(0, 0, 850, 650);
+        LayerP2_4.add(LayerP3_4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P2_4
+        LabelP2_4.setBounds(17, 485, 36, 36);
+        LayerP2_4.add(LabelP2_4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP2_4.setBounds(0, 0, 850, 650);
+        LayerP1_4.add(LayerP2_4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P1_4
+        LabelP1_4.setBounds(198, 64, 36, 36);
+        LayerP1_4.add(LabelP1_4, javax.swing.JLayeredPane.DEFAULT_LAYER); 
+        LayerP1_4.setBounds(0, 0, 850, 650);
+        LayerP4_3.add(LayerP1_4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P4_3
+        LabelP4_3.setBounds(521, 162, 36, 36);
+        LayerP4_3.add(LabelP4_3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP4_3.setBounds(0, 0, 850, 650);
+        LayerP3_3.add(LayerP4_3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        
+        //== Layer P3_3
+        LabelP3_3.setBounds(522, 449, 36, 36);
+        LayerP3_3.add(LabelP3_3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP3_3.setBounds(0, 0, 850, 650);
+        LayerP2_3.add(LayerP3_3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P2_3
+        LabelP2_3.setBounds(53, 450, 36, 36);
+        LayerP2_3.add(LabelP2_3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP2_3.setBounds(0, 0, 850, 650);
+        LayerP1_3.add(LayerP2_3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P1_3
+        LabelP1_3.setBounds(179, 118, 36, 36);
+        LayerP1_3.add(LabelP1_3, javax.swing.JLayeredPane.DEFAULT_LAYER); 
+        LayerP1_3.setBounds(0, 0, 850, 650);
+        LayerP4_2.add(LayerP1_3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P4_2
+        LabelP4_2.setBounds(468, 163, 36, 36);
+        LayerP4_2.add(LabelP4_2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP4_2.setBounds(0, 0, 850, 650);
+        LayerP3_2.add(LayerP4_2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        
+        //== Layer P3_2
+        LabelP3_2.setBounds(475, 470, 36, 36);
+        LayerP3_2.add(LabelP3_2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP3_2.setBounds(0, 0, 850, 650);
+        LayerP2_2.add(LayerP3_2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P2_2
+        LabelP2_2.setBounds(108, 450, 36, 36);
+        LayerP2_2.add(LabelP2_2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerP2_2.setBounds(0, 0, 850, 650);
+        LayerP1_2.add(LayerP2_2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        //== Layer P1_2
+        LabelP1_2.setBounds(143, 153, 36, 36);
+        LayerP1_2.add(LabelP1_2, javax.swing.JLayeredPane.DEFAULT_LAYER); 
+        LayerP1_2.setBounds(0, 0, 850, 650);
+        LayerP4_1.add(LayerP1_2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+         
         //== Layer P4_1
         LabelP4_1.setBounds(433, 127, 36, 36);
         LayerP4_1.add(LabelP4_1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -511,6 +624,18 @@ public class BoardPanel extends javax.swing.JPanel {
     private javax.swing.JLabel LabelP2_1;
     private javax.swing.JLabel LabelP3_1;
     private javax.swing.JLabel LabelP4_1;
+    private javax.swing.JLabel LabelP1_2;
+    private javax.swing.JLabel LabelP2_2;
+    private javax.swing.JLabel LabelP3_2;
+    private javax.swing.JLabel LabelP4_2;
+    private javax.swing.JLabel LabelP1_3;
+    private javax.swing.JLabel LabelP2_3;
+    private javax.swing.JLabel LabelP3_3;
+    private javax.swing.JLabel LabelP4_3;
+    private javax.swing.JLabel LabelP1_4;
+    private javax.swing.JLabel LabelP2_4;
+    private javax.swing.JLabel LabelP3_4;
+    private javax.swing.JLabel LabelP4_4;
     private javax.swing.JLabel LabelWin;
     private javax.swing.JLayeredPane LayerWin;
     private javax.swing.JLayeredPane LayerBG;
@@ -518,6 +643,18 @@ public class BoardPanel extends javax.swing.JPanel {
     private javax.swing.JLayeredPane LayerP2_1;
     private javax.swing.JLayeredPane LayerP3_1;
     private javax.swing.JLayeredPane LayerP4_1;
+    private javax.swing.JLayeredPane LayerP1_2;
+    private javax.swing.JLayeredPane LayerP2_2;
+    private javax.swing.JLayeredPane LayerP3_2;
+    private javax.swing.JLayeredPane LayerP4_2;
+    private javax.swing.JLayeredPane LayerP1_3;
+    private javax.swing.JLayeredPane LayerP2_3;
+    private javax.swing.JLayeredPane LayerP3_3;
+    private javax.swing.JLayeredPane LayerP4_3;
+    private javax.swing.JLayeredPane LayerP1_4;
+    private javax.swing.JLayeredPane LayerP2_4;
+    private javax.swing.JLayeredPane LayerP3_4;
+    private javax.swing.JLayeredPane LayerP4_4;
     private javax.swing.JButton bt_roll_die;
     private javax.swing.JButton bt_exit;
     // End of variables declaration
