@@ -58,10 +58,10 @@ public class BoardPanel extends javax.swing.JPanel {
         Icon P3_1 = new ImageIcon("../Ludo/img/Yellow1.png"); 
         Icon P4_1 = new ImageIcon("../Ludo/img/Blue1.png");
         
-        private int P_Red_start = 0;
-        private int P_Green_start = 0;
-        private int P_Yellow_start = 0;
-        private int P_Blue_start = 0;
+        private int P_Red_Win = 0;
+        private int P_Green_Win = 0;
+        private int P_Yellow_Win = 0;
+        private int P_Blue_Win = 0;
     
     public BoardPanel() {
         initComponents();
@@ -139,22 +139,6 @@ public class BoardPanel extends javax.swing.JPanel {
         P4.setPoX_current(433);
         P4.setPoY_current(127);
         
-        P1_2.setPoX_start(143);
-        P1_2.setPoY_start(153);
-        P1_2.setPoX_current(143);
-        P1_2.setPoY_current(153);
-        P2_2.setPoX_start(108);
-        P2_2.setPoY_start(450);
-        P2_2.setPoX_current(108);
-        P2_2.setPoY_current(450);
-        P3_2.setPoX_start(475);
-        P3_2.setPoY_start(470);
-        P3_2.setPoX_current(475);
-        P3_2.setPoY_current(470);
-        P4_2.setPoX_start(468);
-        P4_2.setPoY_start(163);
-        P4_2.setPoX_current(468);
-        P4_2.setPoY_current(163);
         //P1.settable_current(0);
         
         //status Red
@@ -651,25 +635,165 @@ public class BoardPanel extends javax.swing.JPanel {
         //======================================================================
         
         //Condition to check Win
-        Icon win = null;    
+        Icon win = null;  
         
-        if(P1.gettable_current() == 39){
+        //win round 1
+        if(P1.gettable_current() == 39 && P_Red_Win == 0){
+            P_Red_Win++;
+            LabelP1_4.setVisible(false);
+            P1.setPoX_start(108);
+            P1.setPoY_start(184);
+            P1.setPoX_current(108);
+            P1.setPoY_current(184);
+            P1.settable_current(0);
+            LabelP1_1.setBounds(P1.getPoX_current(), P1.getPoY_current(), nextT, nextT);
+  
+        }
+        else if(P2.gettable_current() == 39 && P_Green_Win == 0){
+            P_Green_Win++;
+            LabelP2_4.setVisible(false);
+            P2.setPoX_start(162);
+            P2.setPoY_start(475);
+            P2.setPoX_current(162);
+            P2.setPoY_current(475);
+            P2.settable_current(0);
+            LabelP2_1.setBounds(P2.getPoX_current(), P2.getPoY_current(), nextT, nextT);
+        
+        }
+        else if(P3.gettable_current() == 39 && P_Yellow_Win == 0){
+            P_Yellow_Win++;
+            LabelP3_4.setVisible(false);
+            P3.setPoX_start(432);
+            P3.setPoY_start(495);
+            P3.setPoX_current(432);
+            P3.setPoY_current(495);
+            P3.settable_current(0);
+            LabelP3_1.setBounds(P3.getPoX_current(), P3.getPoY_current(), nextT, nextT);
+        
+        }
+        else if(P4.gettable_current() == 39 && P_Blue_Win == 0){
+            P_Blue_Win++;
+            LabelP4_4.setVisible(false);
+            P4.setPoX_start(433);
+            P4.setPoY_start(127);
+            P4.setPoX_current(433);
+            P4.setPoY_current(127);
+            P4.settable_current(0);
+            LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), nextT, nextT);
+        }
+        //======================================================================
+        
+        //win round 2
+        if(P1.gettable_current() == 39 && P_Red_Win == 1){
+            P_Red_Win++;
+            LabelP1_3.setVisible(false);
+            P1.setPoX_start(108);
+            P1.setPoY_start(184);
+            P1.setPoX_current(108);
+            P1.setPoY_current(184);
+            P1.settable_current(0);
+            LabelP1_1.setBounds(P1.getPoX_current(), P1.getPoY_current(), nextT, nextT);
+  
+        }
+        else if(P2.gettable_current() == 39 && P_Green_Win == 1){
+            P_Green_Win++;
+            LabelP2_3.setVisible(false);
+            P2.setPoX_start(162);
+            P2.setPoY_start(475);
+            P2.setPoX_current(162);
+            P2.setPoY_current(475);
+            P2.settable_current(0);
+            LabelP2_1.setBounds(P2.getPoX_current(), P2.getPoY_current(), nextT, nextT);
+        
+        }
+        else if(P3.gettable_current() == 39 && P_Yellow_Win == 1){
+            P_Yellow_Win++;
+            LabelP3_3.setVisible(false);
+            P3.setPoX_start(432);
+            P3.setPoY_start(495);
+            P3.setPoX_current(432);
+            P3.setPoY_current(495);
+            P3.settable_current(0);
+            LabelP3_1.setBounds(P3.getPoX_current(), P3.getPoY_current(), nextT, nextT);
+        
+        }
+        else if(P4.gettable_current() == 39 && P_Blue_Win == 1){
+            P_Blue_Win++;
+            LabelP4_3.setVisible(false);
+            P4.setPoX_start(433);
+            P4.setPoY_start(127);
+            P4.setPoX_current(433);
+            P4.setPoY_current(127);
+            P4.settable_current(0);
+            LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), nextT, nextT);
+        }
+        //======================================================================
+        
+        
+        //win round 3
+        if(P1.gettable_current() == 39 && P_Red_Win == 2){
+            P_Red_Win++;
+            LabelP1_2.setVisible(false);
+            P1.setPoX_start(108);
+            P1.setPoY_start(184);
+            P1.setPoX_current(108);
+            P1.setPoY_current(184);
+            P1.settable_current(0);
+            LabelP1_1.setBounds(P1.getPoX_current(), P1.getPoY_current(), nextT, nextT);
+  
+        }
+        else if(P2.gettable_current() == 39 && P_Green_Win == 2){
+            P_Green_Win++;
+            LabelP2_2.setVisible(false);
+            P2.setPoX_start(162);
+            P2.setPoY_start(475);
+            P2.setPoX_current(162);
+            P2.setPoY_current(475);
+            P2.settable_current(0);
+            LabelP2_1.setBounds(P2.getPoX_current(), P2.getPoY_current(), nextT, nextT);
+        
+        }
+        else if(P3.gettable_current() == 39 && P_Yellow_Win == 2){
+            P_Yellow_Win++;
+            LabelP3_2.setVisible(false);
+            P3.setPoX_start(432);
+            P3.setPoY_start(495);
+            P3.setPoX_current(432);
+            P3.setPoY_current(495);
+            P3.settable_current(0);
+            LabelP3_1.setBounds(P3.getPoX_current(), P3.getPoY_current(), nextT, nextT);
+        
+        }
+        else if(P4.gettable_current() == 39 && P_Blue_Win == 2){
+            P_Blue_Win++;
+            LabelP4_2.setVisible(false);
+            P4.setPoX_start(433);
+            P4.setPoY_start(127);
+            P4.setPoX_current(433);
+            P4.setPoY_current(127);
+            P4.settable_current(0);
+            LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), nextT, nextT);
+        }
+        //======================================================================
+        
+        //win
+        if(P1.gettable_current() == 39 && P_Red_Win == 3){
            win = nextP.show_win(round);
            LabelWin.setIcon(win);
            bt_roll_die.setEnabled(false);
            
         }
-        else if(P2.gettable_current() == 39){
+        else if(P2.gettable_current() == 39 && P_Green_Win == 3){
            win = nextP.show_win(round);
            LabelWin.setIcon(win);
            bt_roll_die.setEnabled(false);
         }
-        else if(P3.gettable_current() == 39){
+        else if(P3.gettable_current() == 39 && P_Yellow_Win == 3){
            win = nextP.show_win(round);
            LabelWin.setIcon(win);
            bt_roll_die.setEnabled(false);
         }
-        else if(P4.gettable_current() == 39){
+        else if(P4.gettable_current() == 39 && P_Blue_Win == 3){
            win = nextP.show_win(round);
            LabelWin.setIcon(win);
            bt_roll_die.setEnabled(false);
