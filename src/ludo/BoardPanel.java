@@ -847,9 +847,8 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelWin.setIcon(win);
         
         //status to playing
-        Move nextP = new Move();
-        Icon color_status = nextP.show_status(round);
-        statusR.setIcon(color_status);
+
+        statusR.setIcon(Red);
         statusG.setIcon(Green);
         statusY.setIcon(Yellow);
         statusB.setIcon(Blue);
