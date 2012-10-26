@@ -59,6 +59,9 @@ public class BoardPanel extends javax.swing.JPanel {
         Icon P2_1 = new ImageIcon("../Ludo/img/Green1.png");
         Icon P3_1 = new ImageIcon("../Ludo/img/Yellow1.png"); 
         Icon P4_1 = new ImageIcon("../Ludo/img/Blue1.png");
+        Icon new_game = new ImageIcon("../Ludo/img/newgame.png");
+        Icon exit = new ImageIcon("../Ludo/img/exit.png");
+        
 
         Icon win = null; 
 
@@ -175,7 +178,8 @@ public class BoardPanel extends javax.swing.JPanel {
         
         
         //bt newGame
-        bt_newgame.setText("New Game");
+        //bt_newgame.setText("New Game");
+        bt_newgame.setIcon(new_game);
         //Icon die = new ImageIcon("../Ludo/img/dice.png");
         //bt_exit.setIcon(die);
         bt_newgame.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +193,8 @@ public class BoardPanel extends javax.swing.JPanel {
         
         
         //bt exits
-        bt_exit.setText("Exit");
+        //bt_exit.setText("Exit");
+        bt_exit.setIcon(exit);
         //Icon die = new ImageIcon("../Ludo/img/dice.png");
         //bt_exit.setIcon(die);
         bt_exit.addActionListener(new java.awt.event.ActionListener() {
@@ -203,7 +208,7 @@ public class BoardPanel extends javax.swing.JPanel {
         
         
         //bt Dice
-        bt_roll_die.setText("Die");
+        //bt_roll_die.setText("Die");
         bt_roll_die.setIcon(die);
         bt_roll_die.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
