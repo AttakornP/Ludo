@@ -1,9 +1,11 @@
 package ludo;
 
 import java.awt.Color;
+import java.nio.file.attribute.AclEntry.Builder;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+
 
 /*
  * To change this template, choose Tools | Templates
@@ -53,6 +55,7 @@ public class BoardPanel extends javax.swing.JPanel {
         Icon P2_1 = new ImageIcon("../Ludo/img/Green1.png");
         Icon P3_1 = new ImageIcon("../Ludo/img/Yellow1.png"); 
         Icon P4_1 = new ImageIcon("../Ludo/img/Blue1.png");
+        Icon win = null; 
     
     public BoardPanel() {
         initComponents();
@@ -80,6 +83,7 @@ public class BoardPanel extends javax.swing.JPanel {
         LabelWin = new javax.swing.JLabel();
         LabelBG = new javax.swing.JLabel();
         bt_roll_die = new javax.swing.JButton();
+        bt_newgame = new javax.swing.JButton();
         bt_exit = new javax.swing.JButton();
         statusR = new javax.swing.JLabel();
         statusG = new javax.swing.JLabel();
@@ -130,11 +134,26 @@ public class BoardPanel extends javax.swing.JPanel {
         statusB.setIcon(Blue);
         statusB.setBounds(700, 400, 100, 50);
         LayerP4_1.add(statusB, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         
-        //bt exit
+        
+        //bt newGame
+        bt_newgame.setText("New Game");
+        //Icon die = new ImageIcon("../Ludo/img/dice.png");
+        //bt_exit.setIcon(die);
+        bt_newgame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_newgameActionPerformed(evt);
+            }
+        });        
+        bt_newgame.setBounds(653, 0, 100, 50);
+        LayerP4_1.add(bt_newgame, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        
+        
+        
+        //bt exits
         bt_exit.setText("Exit");
         //Icon die = new ImageIcon("../Ludo/img/dice.png");
-        
         //bt_exit.setIcon(die);
         bt_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,10 +164,9 @@ public class BoardPanel extends javax.swing.JPanel {
         LayerP4_1.add(bt_exit, javax.swing.JLayeredPane.DEFAULT_LAYER);
         
         
+        
         //bt Dice
         bt_roll_die.setText("Die");
-        
-        
         bt_roll_die.setIcon(die);
         bt_roll_die.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -469,7 +487,7 @@ public class BoardPanel extends javax.swing.JPanel {
             }
             //==
         }
-        Icon win = null;    
+           
         
         if(P1.gettable_current() == 39){
            win = nextP.show_win(round);
@@ -501,6 +519,56 @@ public class BoardPanel extends javax.swing.JPanel {
         System.exit(0);
     }
     
+     private void bt_newgameActionPerformed(java.awt.event.ActionEvent evt) {
+         
+        round=1;
+        bt_roll_die.setEnabled(true);
+        LabelWin.setVisible(false);
+        LabelWin.setIcon(win);
+        
+        P1.setPoX_start(108);
+        P1.setPoY_start(184);
+        P1.setPoX_current(108);
+        P1.setPoY_current(184);
+        P1.settable_current(0);
+        LabelP1_1.setBounds(P1.getPoX_current(), P1.getPoY_current(), 36, 36);
+        
+        P2.setPoX_start(162);
+        P2.setPoY_start(475);
+        P2.setPoX_current(162);
+        P2.setPoY_current(475);
+        P2.settable_current(0);
+        LabelP2_1.setBounds(P2.getPoX_current(), P2.getPoY_current(), 36, 36);
+        
+        P3.setPoX_start(432);
+        P3.setPoY_start(495);
+        P3.setPoX_current(432);
+        P3.setPoY_current(495);
+        P3.settable_current(0);
+        LabelP3_1.setBounds(P3.getPoX_current(), P3.getPoY_current(), 36, 36);
+        
+        P4.setPoX_start(433);
+        P4.setPoY_start(127);
+        P4.setPoX_current(433);
+        P4.setPoY_current(127);
+        P4.settable_current(0);
+        LabelP4_1.setBounds(P4.getPoX_current(), P4.getPoY_current(), 36, 36);
+        
+        
+    
+         
+        
+        
+        
+        
+        
+//        new MainWindows().setVisible(true);
+//        this.dispose();
+        
+     }
+    
+    
+    
     // Variables declaration - do not modify
     private javax.swing.JLabel LabelBG;
     private javax.swing.JLabel statusR;
@@ -520,5 +588,8 @@ public class BoardPanel extends javax.swing.JPanel {
     private javax.swing.JLayeredPane LayerP4_1;
     private javax.swing.JButton bt_roll_die;
     private javax.swing.JButton bt_exit;
+    private javax.swing.JButton bt_newgame;
     // End of variables declaration
+
+
 }
